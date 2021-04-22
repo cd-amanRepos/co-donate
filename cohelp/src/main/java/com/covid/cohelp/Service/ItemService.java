@@ -26,7 +26,7 @@ public class ItemService {
         Optional<Item> itemOptional = itemRepository.findById(item.getItem_id());
         if(itemOptional.isPresent()) {
             Item curItem = itemOptional.get();
-            curItem.setItem_name(item.getItem_name());
+            curItem.setName(item.getName());
             return itemRepository.save(curItem);
         }
         else {
